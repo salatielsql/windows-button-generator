@@ -1,0 +1,14 @@
+{
+  "name": "canvas2image",
+  "homepage": "https://github.com/hongru/canvas2image",
+  "_release": "8a5394679f",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "8a5394679fe8078e823a2347edf581d3cb26fab2"
+  },
+  "_source": "git://github.com/hongru/canvas2image.git",
+  "_target": "*",
+  "_originalSource": "hongru/canvas2image",
+  "_direct": true
+}

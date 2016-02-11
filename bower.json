@@ -1,0 +1,25 @@
+{
+  "name": "windows-button-generator",
+  "homepage": "https://github.com/salatielq/windows-button-generator",
+  "authors": [
+    "Salatiel Queiroz <salatielsqueiroz.com>",
+    "Dilan Nery <dnerylopes@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "html2canvas": "niklasvh/html2canvas#^0.4.1",
+    "canvas2image": "hongru/canvas2image"
+  }
+}
