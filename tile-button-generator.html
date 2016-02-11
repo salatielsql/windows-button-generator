@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Gerador de Botões</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+		.button {
+			height: 72px !important;
+			display: inline-block;
+			margin: 0;
+			text-align: left;
+			padding-left: 10px;
+			padding-right: 45px;
+			line-height: 30px;
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		.button-text {
+			font-family: 'Segoe UI';
+			font-size: 15px;
+			font-style: normal;
+			font-variant: normal;
+			font-weight: 400;
+			color: #fff;
+			float: left;
+		}
+		.button-icon {
+			display: inline-block;
+			float: left;
+			margin-right: 5px;
+		}
+		.compras {
+			background-color: #0678bd;
+		}
+	</style>
+	<section class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h1>Gerador de Botões</h1>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<h3>Texto do botão:</h3>
+				<form action="">
+
+					<div class="form-group">
+						<label for="exampleInputEmail1">Texto do botão:</label>
+						<input type="text" class="form-control">
+					</div>
+				</form>
+			</div>
+			<div class="col-md-4">
+				<h3>Escoha o icone:</h3>
+				<div class="radio">
+					<label>
+						<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+						Option two can be something else and selecting it will deselect option one
+					</label>
+					<label>
+						<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+						Option two can be something else and selecting it will deselect option one
+					</label>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<h3>Selecione o modulo</h3>
+				<div class="radio">
+					<label>
+						<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+						Option two can be something else and selecting it will deselect option one
+					</label>
+					<label>
+						<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+						Option two can be something else and selecting it will deselect option one
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Preview:</h2>
+				<div class="button compras">
+					<img class="button-icon" src="Checked-32.png" alt="">
+					<div class="button-text">Liberar estoque</div>
+					</div>
+			</div>
+		</div>
+
+		<br>
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" value="">
+				Exportar estados (hover, active, clicked)
+			</label>
+		</div>
+		<a class="btn btn-primary btn-lg" href="#">Exportar (.png)</a>
+	</section>
+</body>
+</html>
