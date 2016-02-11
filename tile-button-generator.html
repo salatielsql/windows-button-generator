@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body ng-app="buttonGenerator" ng-controller="Main">
 	<section class="container">
 		<div class="row">
 			<div class="col-sm-12">
@@ -21,7 +21,7 @@
 
 					<div class="form-group">
 						<label for="exampleInputEmail1">Texto do botão:</label>
-						<input type="text" class="form-control">
+						<input type="text" class="form-control" ng-model="buttonText">
 					</div>
 				</form>
 			</div>
@@ -29,7 +29,7 @@
 				<h3>Escoha o icone:</h3>
 				<br>
 
-				<span class="btn btn-default btn-file">
+				<span class="">
 					Selecione o arquivo <input type="file">
 				</span>
 				<hr>
@@ -38,72 +38,78 @@
 					Os icones devem ser em brancos no tamanho 32x32px em .png transparente
 				</div>
 			</div>
-			<div class="col-md-4">
-				<h3>Selecione a cor</h3>
-				<div class="radio">
-					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-						Azul <span class="color-sample blue"></span>
-					</label>
+			<div class="row">
+				<div class="col-md-4">
+					<h3>Selecione a cor</h3>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios" id="optionsRadios2" value="blue" ng-model="color" checked>
+							Azul <span class="color-sample blue"></span>
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios" id="optionsRadios2" value="purple" ng-model="color">
+							Roxo <span class="color-sample purple"></span>
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios" id="optionsRadios2" value="green" ng-model="color">
+							Verde <span class="color-sample green"></span>
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios" id="optionsRadios2" value="orange" ng-model="color">
+							Laranja <span class="color-sample orange"></span>
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios" id="optionsRadios2" value="yellow" ng-model="color">
+							Amarelo <span class="color-sample yellow"></span>
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios" id="optionsRadios2" value="black" ng-model="color">
+							Preto <span class="color-sample black"></span>
+						</label>
+					</div>
 				</div>
-				<div class="radio">
-
-					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-						Roxo <span class="color-sample purple"></span>
-					</label>
-				</div>
-				<div class="radio">
-
-					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-						Verde <span class="color-sample green"></span>
-					</label>
-				</div>
-				<div class="radio">
-
-					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-						Laranja <span class="color-sample orange"></span>
-					</label>
-				</div>
-				<div class="radio">
-
-					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-						Amarelo <span class="color-sample yellow"></span>
-					</label>
-				</div>
-				<div class="radio">
-
-					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-						Preto <span class="color-sample black"></span>
-					</label>
-				</div>
-
 			</div>
 		</div>
-	</div>
-
-	<div class="row">
-		<div class="col-md-12">
-			<h2>Preview:</h2>
-			<div class="button blue">
-				<img class="button-icon" src="icons/Checked-32.png" alt="">
-				<div class="button-text">Liberar estoque</div>
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Preview:</h2>
+				<div class="button {{ color }}" id="theButton">
+					<img class="button-icon" ng-src="{{ icon }}" alt="">
+					<div class="button-text">{{ buttonText }}</div>
+				</div>
+				<div class="button {{ color }}" id="theButton" ng-if="buttonStates">
+					<img class="button-icon" ng-src="{{ icon }}" alt="" >
+					<div class="button-text">{{ buttonText }}</div>
+				</div>
+				<div class="button {{ color }}" id="theButton" ng-if="buttonStates">
+					<img class="button-icon" ng-src="{{ icon }}" alt="">
+					<div class="button-text">{{ buttonText }}</div>
+				</div>
 			</div>
 		</div>
-	</div>
+		<br>
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" value="" ng-model="buttonStates">
+				Exportar estados (hover, active, clicked)
+			</label>
+		</div>
+		<a class="btn btn-primary btn-lg" href="#">Exportar (.png)</a>
+	</section>
 
-	<br>
-	<div class="checkbox">
-		<label>
-			<input type="checkbox" value="">
-			Exportar estados (hover, active, clicked)
-		</label>
-	</div>
-	<a class="btn btn-primary btn-lg" href="#">Exportar (.png)</a>
-</section>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/html2canvas/build/html2canvas.min.js"></script>
+	<script src="bower_components/canvas2image/canvas2image.js"></script>
+	<script src="js/app.js"></script>
 </body>
 </html>

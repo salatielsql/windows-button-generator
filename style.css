@@ -1,7 +1,8 @@
 @font-face {
 	font-family: 'SEGOEUIL';
-	src: url('fonts/SEGOEUIL.eot');
-	src: local('fonts/SEGOEUIL'), url('fonts/SEGOEUIL.woff') format('woff'), url('fonts/SEGOEUIL.ttf') format('truetype');
+	src: url('fonts/SEGOEUIL.eot'),
+		 url('fonts/SEGOEUIL.woff') format('woff'),
+		 url('fonts/SEGOEUIL.ttf') format('truetype');
 }
 .button {
 	height: 72px !important;
