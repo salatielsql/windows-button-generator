@@ -1,0 +1,53 @@
+@font-face {
+	font-family: 'SEGOEUIL';
+	src: url('fonts/SEGOEUIL.eot');
+	src: local('fonts/SEGOEUIL'), url('fonts/SEGOEUIL.woff') format('woff'), url('fonts/SEGOEUIL.ttf') format('truetype');
+}
+.button {
+	height: 72px !important;
+	display: inline-block;
+	margin: 0;
+	text-align: left;
+	padding-left: 10px;
+	padding-right: 45px;
+	line-height: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.button-text {
+	font-family: 'SEGOEUIL' !important;
+	font-size: 15px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	color: #fff;
+	float: left;
+}
+.button-icon {
+	display: inline-block;
+	float: left;
+	margin-right: 5px;
+}
+.color-sample {
+	display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+.blue {
+	background-color: #0678bd;
+}
+.purple {
+	background-color: #934d95;
+}
+.green {
+	background-color: #7ab642;
+}
+.orange {
+	background-color: #ea6a23;
+}
+.yellow {
+	background-color: #eaa117;
+}
+.black {
+	background-color: #3a3a3a;
+}
