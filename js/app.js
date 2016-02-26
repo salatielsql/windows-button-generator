@@ -2,28 +2,38 @@ angular.module('buttonGenerator', [])
 
 .controller('Main', ['$scope',
 	function(scope) {
-		scope.buttonText = "Exemplo"
+		scope.buttonText = "Exemplo";
 		scope.color = "blue";
 		scope.icon = "";
+
+		scope.generateImage = function() {
+			html2canvas(angular.element(buttons), {
+				onrendered: function(canvas) {
+					var filename = scope.buttonText + ".png";
+					canvas.toBlob(function(blob) {
+						saveAs(blob, filename);
+					});
+				}
+			});
+		};
 	}
 ])
 
-.directive('myFile', [
-
-	function() {
-		return {
-			restrict: 'A',
-			link: function(scope, elem, attrs) {
+.directive("fileread", [function () {
+	return {
+		scope: {
+			fileread: "="
+		},
+		link: function (scope, element, attributes) {
+			element.bind("change", function (changeEvent) {
 				var reader = new FileReader();
-				reader.onload = function(e) {
-					scope.icon = e.target.result;
-					scope.$apply();
-				}
-
-				elem.on('change', function() {
-					reader.readAsDataURL(elem[0].files[0]);
-				});
-			}
-		};
-	}
-]);
+				reader.onload = function (loadEvent) {
+					scope.$apply(function () {
+						scope.fileread = loadEvent.target.result;
+					});
+				};
+				reader.readAsDataURL(changeEvent.target.files[0]);
+			});
+		}
+	};
+}]);

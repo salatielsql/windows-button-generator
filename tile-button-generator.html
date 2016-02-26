@@ -30,7 +30,7 @@
 				<br>
 
 				<span class="">
-					Selecione o arquivo <input type="file">
+					Selecione o arquivo <input type="file" fileread="icon">
 				</span>
 				<hr>
 				<a class="btn" href="https://icons8.com/web-app/category/win10/Very-Basic" target="_blank">Encontre e baixe icones aqui</a>
@@ -83,20 +83,21 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h2>Preview:</h2>
-				<div class="button {{ color }}" id="theButton">
-					<img class="button-icon" ng-src="{{ icon }}" alt="">
-					<div class="button-text">{{ buttonText }}</div>
-				</div>
-				<div class="button {{ color }}" id="theButton" ng-if="buttonStates">
-					<img class="button-icon" ng-src="{{ icon }}" alt="" >
-					<div class="button-text">{{ buttonText }}</div>
-				</div>
-				<div class="button {{ color }}" id="theButton" ng-if="buttonStates">
-					<img class="button-icon" ng-src="{{ icon }}" alt="">
-					<div class="button-text">{{ buttonText }}</div>
+				<div id="buttons">
+					<div class="button {{ color }}" id="theButton">
+						<img class="button-icon" ng-src="{{ icon }}" alt="">
+						<div class="button-text">{{ buttonText }}</div>
+					</div>
+					<div class="button {{ color }}" id="theButton" ng-if="buttonStates">
+						<img class="button-icon" ng-src="{{ icon }}" alt="" >
+						<div class="button-text">{{ buttonText }}</div>
+					</div>
+					<div class="button {{ color }}" id="theButton" ng-if="buttonStates">
+						<img class="button-icon" ng-src="{{ icon }}" alt="">
+						<div class="button-text">{{ buttonText }}</div>
+					</div>
 				</div>
 			</div>
-		</div>
 		<br>
 		<div class="checkbox">
 			<label>
@@ -104,12 +105,15 @@
 				Exportar estados (hover, active, clicked)
 			</label>
 		</div>
-		<a class="btn btn-primary btn-lg" href="#">Exportar (.png)</a>
+		<a class="btn btn-primary btn-lg" href="#" ng-click="generateImage()">Exportar (.png)</a>
 	</section>
 
 	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/Blob.js/Blob.js"></script>
+	<script src="bower_components/canvas-toBlob.js/canvas-toBlob.js"></script>
 	<script src="bower_components/html2canvas/build/html2canvas.min.js"></script>
 	<script src="bower_components/canvas2image/canvas2image.js"></script>
+	<script src="bower_components/file-saver.js/FileSaver.js"></script>
 	<script src="js/app.js"></script>
 </body>
 </html>

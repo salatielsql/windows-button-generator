@@ -20,6 +20,9 @@
   "dependencies": {
     "angular": "^1.5.0",
     "html2canvas": "niklasvh/html2canvas#^0.4.1",
-    "canvas2image": "hongru/canvas2image"
+    "canvas2image": "hongru/canvas2image",
+    "file-saver.js": "Teleborder/FileSaver.js#^1.20150507.2",
+    "canvas-toBlob.js": "eligrey/canvas-toBlob.js",
+    "Blob.js": "eligrey/Blob.js"
   }
 }
