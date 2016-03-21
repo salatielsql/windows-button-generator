@@ -1,3 +1,12 @@
+@font-face {
+	font-family: 'SEGOEUIL';
+	src: url('../fonts/SEGOEUIL.eot'),
+		 url('../fonts/SEGOEUIL.woff') format('woff'),
+		 url('../fonts/SEGOEUIL.ttf') format('truetype');
+}
+.buttons {
+	display: inline-block;
+}
 .button {
 	height: 72px !important;
 	display: inline-block;
@@ -10,12 +19,11 @@
 	padding-bottom: 20px;
 }
 .button-text {
-	font-family: 'Segoe UI';
+	font-family: 'SEGOEUIL', sans-serif !important;
 	font-size: 15px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
-	color: #fff;
 	float: left;
 }
 .button-icon {
@@ -45,4 +53,31 @@
 }
 .black {
 	background-color: #3a3a3a;
+}
+.up{
+	color: #fff;
+}
+.clicked, .disabled{
+	color: rgba(255, 255, 255, .35);
+	position: relative;
+}
+.clicked .button-icon, .disabled .button-icon {
+	opacity: .35;
+}
+.down {
+	color: rgba(255, 255, 255, .9);
+	position: relative;
+}
+.down .button-icon {
+	opacity: .9;
+}
+.down:after, .clicked:after {
+	content: '';
+	position: absolute;
+    width: 100%;
+    display: inline-block;
+    height: 72px;
+    top: 0;
+    left: 0;
+    border: 3px solid rgba(255, 255, 255, .7);
 }

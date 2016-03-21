@@ -84,33 +84,35 @@
 			<div class="col-md-12">
 				<h2>Preview:</h2>
 				<div id="buttons">
-					<div class="button {{ color }}" id="theButton">
+					<div class="button {{ color }} up" id="theButton">
 						<img class="button-icon" ng-src="{{ icon }}" alt="">
 						<div class="button-text">{{ buttonText }}</div>
 					</div>
-					<div class="button {{ color }} hover" id="theButton" ng-if="buttonStates">
-						<img class="button-icon" ng-src="{{ icon }}" alt="" >
-						<div class="button-text">{{ buttonText }}</div>
-					</div>
-					<div class="button {{ color }} active" id="theButton" ng-if="buttonStates">
+					<div class="button {{ color }} disabled" id="theButton" ng-if="buttonStates">
 						<img class="button-icon" ng-src="{{ icon }}" alt="" >
 						<div class="button-text">{{ buttonText }}</div>
 					</div>
 					<div class="button {{ color }} clicked" id="theButton" ng-if="buttonStates">
+						<img class="button-icon" ng-src="{{ icon }}" alt="" >
+						<div class="button-text">{{ buttonText }}</div>
+					</div>
+					<div class="button {{ color }} down" id="theButton" ng-if="buttonStates">
 						<img class="button-icon" ng-src="{{ icon }}" alt="">
 						<div class="button-text">{{ buttonText }}</div>
 					</div>
 				</div>
 			</div>
 		<br>
+		<div class="col-md-12">	
 		<div class="checkbox">
 			<label>
 				<input type="checkbox" value="" ng-model="buttonStates">
-				Exportar estados (hover, active, clicked)
+				Exportar estados (Normal(First, Up), Desativado(Second, Disabled), Pressionado (Third, Clicked) Selecionado(Fourth, Down)
 			</label>
 		</div>
 		<p ng-if="!icon">Escolha um icone antes de salvar</p>
 		<a class="btn btn-primary btn-lg" href="#" ng-disabled="!icon" ng-click="generateImage()">Exportar (.png)</a>
+		<div>
 	</section>
 
 	<script src="bower_components/angular/angular.min.js"></script>
